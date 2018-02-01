@@ -17,9 +17,23 @@ h2:first-of-type {
     margin-top: 0.5em;
 }
 
+#info {
+    font-family: Roboto;
+    font-size: 0.8em;
+    color: white
+}
+
 #sizePicker {
     font-family: Roboto;
     font-size: 0.8em;
+}
+
+#clear {
+    visibility: hidden;
+}
+
+#canvas {
+    padding-bottom: 10px;
 }
 
 table,
