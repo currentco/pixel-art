@@ -1,22 +1,30 @@
 $(document).ready(function() {
   function makeGrid() {
     // selects input values for the grid
-    let rows = $("#inputHeight").val();
-    let columns = $("#inputWidth").val();
-    let table = $("#pixelCanvas");
+    const rows = $("#inputHeight").val();
+    const columns = $("#inputWidth").val();
+    const table = $("#pixelCanvas");
 
     // removes any previous child elements of the table
     table.children().remove();
 
     // creates the grid according to the input values
-    for (var x = 0; x < rows; x++) {
-      table.append("<tr></tr>");
-      for (var y = 0; y < columns; y++) {
-        table
-          .children()
-          .last()
-          .append("<td></td>");
+    if (rows <= 50 && rows > 0 && (columns <= 50 && columns > 0)) {
+      for (var x = 0; x < rows; x++) {
+        table.append("<tr></tr>");
+        for (var y = 0; y < columns; y++) {
+          table
+            .children()
+            .last()
+            .append("<td></td>");
+        }
       }
+      $("p").css("color", "black");
+      $("#clear").css("visibility", "visible");
+    } else {
+      alert("Value needs to be between 1 and 50.");
+      $("p").css("color", "white");
+      $("#clear").css("visibility", "hidden");
     }
 
     // after clicking on a cell, adds selected color
@@ -31,7 +39,7 @@ $(document).ready(function() {
       $(this).css("background-color", "");
     });
 
-    // after clicking the reset button, clears the grid 
+    // after clicking the reset button, clears the grid
     $("#clear").click(function() {
       $("td").css("background-color", "");
     });
@@ -41,7 +49,5 @@ $(document).ready(function() {
   $("#submit-button").click(function(z) {
     z.preventDefault();
     makeGrid();
-    $("p").css("color", "black");
-    $("#clear").css("visibility", "visible");
   });
 });
