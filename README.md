@@ -1,6 +1,6 @@
 # Pixel Art Studio
 
-This is a pixel art maker that enables you to be a pixel artist. The game is suitable for kids over 3 years old.
+This is a pixel art maker that enables you to be a pixel artist. The application is suitable for kids over 3 years old.
 
 ## Table of Contents
 
